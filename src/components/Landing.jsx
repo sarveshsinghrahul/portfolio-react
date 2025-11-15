@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import StarCanvas from './StarCanvas'; // <-- 1. IMPORT StarCanvas HERE
 
 // ADD A LEADING SPACE to each string in this array
 const phrases = [" Student", " Web Designer", " Photographer"];
@@ -39,6 +40,7 @@ const Landing = () => {
 
     return (
         <section id="home" className="landing-page">
+            <StarCanvas /> {/* <-- 2. ADD StarCanvas HERE */}
             <div className="content">
                 <div className="landing-content">
                     <h1>Hi, I'm Sarvesh Singh, a 
