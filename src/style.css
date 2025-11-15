@@ -1,13 +1,15 @@
 :root {
-  --text: #f6e6f2;
-  --background: #180814;
-  --primary: #db96ca;
-  --secondary: #75283f;
-  --accent: #c86177;
+ /* "Forest Haze" (Earthy & Modern) */
+  --text: #e0e0e0; /* Soft off-white text */
+  --background: #262c2b; /* Dark mossy green */
+  --primary: #a7c957; /* Bright lime green accent */
+  --secondary: #bcbcbc; /* Light gray for subheadings */
+  --accent: #f2e8c6; /* Cream/beige secondary accent */
+  
   --white: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.2);
-  --box1:#22111D;
-  --box2:#2A0E1D;
+  --box1: #343f3e; /* Lighter mossy green */
+  --box2: #343f3e;
 }
 
 * {
@@ -65,7 +67,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(24, 8, 20, 0.8); /* Semi-transparent background */
+  /* UPDATED to use RGB of var(--background) with transparency */
+  background-color: rgba(38, 44, 43, 0.8);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   backdrop-filter: blur(10px); /* Add a blur effect */
   z-index: 1000;
@@ -74,10 +77,11 @@ body {
 .logo h1 {
     font-family: 'Pacifico', cursive; /* Use a stylish font */
     font-size: 2.5rem; /* Adjust the size as needed */
-    color: var(--accent); /* Change the color */
-    text-shadow: 2px 2px 6px rgba(200, 97, 119, 0.5), 
-             0 0 25px rgba(200, 97, 119, 0.4), 
-             0 0 5px rgba(200, 97, 119, 0.3);/* Add a shadow effect */
+    color: var(--primary); /* UPDATED */
+    /* UPDATED to use var(--primary) colors */
+    text-shadow: 2px 2px 6px rgba(167, 201, 87, 0.5), 
+                 0 0 25px rgba(167, 201, 87, 0.4), 
+                 0 0 5px rgba(167, 201, 87, 0.3);
     margin: 0; /* Remove default margin */
 }
 
