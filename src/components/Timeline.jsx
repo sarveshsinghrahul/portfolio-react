@@ -39,6 +39,14 @@ const timelineData = [
         img: projectImg, // Add another image
         link: "#" // Add another link
     },
+    { 
+        date: "Month 202X", // <-- SET YOUR DATE
+        title: "ASL Recognition Project", // <-- SET YOUR TITLE
+        description: "Developed a machine learning model to recognize and translate American Sign Language gestures in real-time.", // <-- SET YOUR DESCRIPTION
+        type: "project",
+        img: projectImg, // <-- CHANGE THIS to your project image (import it at the top)
+        link: "https://sarveshsinghrahul.github.io/ASL-Recognition-Project/" // <-- SET YOUR LINK
+    },
 ];
 
 // 2. UPDATE THE TimelineItem COMPONENT
