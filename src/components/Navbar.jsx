@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react'; // <-- 1. IMPORT useState
 
 const Navbar = () => {
-    // You'll need to add state for the hamburger menu
-    // const [isOpen, setIsOpen] = useState(false);
-    // const toggleMenu = () => setIsOpen(!isOpen);
+    // 2. ADD STATE FOR THE HAMBURGER MENU
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleMenu = () => setIsOpen(!isOpen);
+
+    // 3. ADD A FUNCTION TO CLOSE MENU ON LINK CLICK
+    const closeMenu = () => setIsOpen(false);
 
     return (
         <header className="navbar">
@@ -11,15 +14,19 @@ const Navbar = () => {
                 <h1>Sarvesh Singh</h1>
             </div>
             
-            <div className="hamburger" /* onClick={toggleMenu} */>
+            {/* 4. ADD onClick TO THE HAMBURGER */}
+            <div className="hamburger" onClick={toggleMenu}>
                 <div className="line"></div>
                 <div className="line"></div>
                 <div className="line"></div>
             </div>
-            <nav /* className={isOpen ? 'show' : ''} */>
+
+            {/* 5. ADD CONDITIONAL CLASS AND onClick TO NAV */}
+            <nav className={isOpen ? 'show' : ''} onClick={closeMenu}>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li> {/* <-- 6. ADD SKILLS LINK */}
                     <li><a href="#timeline">Timeline</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>

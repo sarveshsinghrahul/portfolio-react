@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const phrases = ["Student", "Web Designer", "Photographer"];
+// ADD A LEADING SPACE to each string in this array
+const phrases = [" Student", " Web Designer", " Photographer"];
 const colors = ["#db96ca", "#75283f", "#c86177"];
 
 const Landing = () => {
@@ -41,6 +42,7 @@ const Landing = () => {
             <div className="content">
                 <div className="landing-content">
                     <h1>Hi, I'm Sarvesh Singh, a 
+                        {/* The space will now appear correctly here */}
                         <span className="typed-text" style={{ color: colors[phraseIndex] }}>
                             {text}
                         </span>

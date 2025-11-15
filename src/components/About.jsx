@@ -1,27 +1,28 @@
 import React from 'react';
-import moonImage from '../assets/moon.png'; // <-- FIX 1: Import the image
-import { useInView } from '../hooks/useInView'; // <-- FIX 2: Import the hook
+import moonImage from '../assets/moon.png';
+import { useInView } from '../hooks/useInView';
 
 const About = () => {
-    // FIX 3: Call the hook for each element you want to observe
     const [moonRef, isMoonInView] = useInView({ threshold: 0.1 });
     const [boxRef, isBoxInView] = useInView({ threshold: 0.1 });
 
     return (
         <section className="about-section" id="about">
             <div className="content">
-                {/* FIX 4: Add the ref and conditional className */}
+
+                {/* --- MOVE THE MOON DIV HERE (FIRST) --- */}
                 <div 
                     id="moon" 
                     ref={moonRef} 
                     className={isMoonInView ? 'in-view' : ''}
                 >
-                    {/* FIX 5: Use the imported image variable */}
                     <img src={moonImage} alt="Moon" className="moon-image" />
                 </div>
+                {/* ------------------------------------- */}
+
+                {/* --- LEAVE THE TEXT CONTENT HERE (SECOND) --- */}
                 <h2>About Me</h2>
                 <div className="about-info">
-                    {/* FIX 6: Add the ref and conditional className */}
                     <div 
                         className={`about-box ${isBoxInView ? 'in-view' : ''}`}
                         ref={boxRef}
@@ -32,6 +33,8 @@ const About = () => {
                         </p>
                     </div>
                 </div>
+                {/* ------------------------------------------- */}
+
             </div>
         </section>
     );

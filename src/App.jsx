@@ -1,11 +1,12 @@
 import React from 'react';
 import StarCanvas from './components/StarCanvas';
 import Navbar from './components/Navbar';
+import ProgressBar from './components/ProgressBar'; // <-- 1. IMPORT IT
 import Landing from './components/Landing';
 import About from './components/About';
+import Skills from './components/Skills'; 
 import Timeline from './components/Timeline';
 import Contact from './components/Contact';
-// You will need to create and import the ProgressBar component
 
 function App() {
   return (
@@ -13,12 +14,13 @@ function App() {
       {/* These are fixed or background elements */}
       <StarCanvas />
       <Navbar />
-      {/* <ProgressBar /> */} {/* You'd need to convert the progress bar logic */}
+      <ProgressBar /> {/* <-- 2. ADD IT HERE */}
       
       {/* These are the page sections */}
       <main>
         <Landing />
         <About />
+        <Skills /> 
         <Timeline />
         <Contact />
       </main>

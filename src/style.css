@@ -366,7 +366,8 @@ nav ul li a:hover::after {
 
 .timeline-content p {
   margin: 0;
-  color: #555;
+  color: #E9E2E7; /* <-- MODIFIED: Was #555, now readable */
+  margin-bottom: 1rem; /* <-- ADDED: Space before button */
 }
 
 /* When in-view, make the item visible */
@@ -375,6 +376,26 @@ nav ul li a:hover::after {
   transform: translateY(0);
 }
 
+/* --- ADDED STYLES FOR TIMELINE PROJECTS --- */
+
+/* Styles for the new project image in the timeline */
+.timeline-project-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px; /* Match the card's border-radius */
+  margin: 1rem 0; /* Space it out vertically */
+}
+
+/* Styles for the button inside the timeline */
+.timeline-content .btn-primary {
+  display: inline-block; /* Make it a block-level link */
+  margin-bottom: 0.5rem; /* Add some space at the bottom */
+  background-color: var(--accent); /* Use accent color */
+  font-size: 0.9rem; /* Make it slightly smaller */
+  padding: 0.6rem 1.5rem; /* Adjust padding */
+}
+
+/* --- END OF ADDED STYLES --- */
 
 
 /* Ensure sections have transparent backgrounds */
@@ -501,9 +522,6 @@ nav ul li a:hover::after {
 }
 
 
-
-
-
 /* Animations */
 @keyframes fadeIn {
   0% { opacity: 0; }
@@ -534,7 +552,8 @@ nav ul li a:hover::after {
   }
 
 
-
+/* These styles are from your original file, but are not currently used */
+/* You can remove them if you're not planning to add a separate projects section */
   .projects-section {
   padding: 100px 50px;
   text-align: center;
@@ -585,4 +604,62 @@ nav ul li a:hover::after {
 .project-card .btn-primary {
   margin-bottom: 1.5rem;
   background-color: var(--accent);
+}
+
+/* --- SKILLS SECTION STYLES --- */
+
+.skills-section {
+  padding: 100px 50px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.skills-section h2 {
+  font-size: 2.5rem;
+  color: var(--secondary);
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: grid;
+  /* Adjust minmax to make cards smaller/larger */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: var(--box2);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 1px 4px 20px var(--box2);
+  text-align: center;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  color: var(--primary);
+  font-size: 4rem; /* Icon size */
+  
+  /* For the fade-in */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.skill-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 8px 30px var(--box2);
+}
+
+.skill-card p {
+  font-size: 1rem;
+  color: var(--text);
+  margin-top: 1rem;
 }
